@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    justify-content: right; 
+    align-items: end; 
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-image: url('/public/images/bg.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    z-index: 1; 
+  }
+  
+  .pumpContainer {
+    position: relative;
+  }
+  
+  .pump {
+    cursor: pointer;
+    left: 50%;
+    transition: transform 0.2s;
+  }
+  
+  .handle {
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.2s;
+    cursor: pointer;
+    top: -200px;
+    z-index: -1;
+  }
+  
+  .compressor {
+    position: absolute;
+    left: calc(0% - 200px); 
+    top: -20px; 
+    transition: transform 0.2s;
+    z-index: -1;
+  }
+  
+  .handleDown {
+    transform: translateY(30px) translateX(-50%);
+  }
+  
+  .pumpUp {
+    transform: translateY(-30px);
+  }
+  
+  .compressorUp {
+    transform: translateY(-30px);
+  }
+  
+  .balloon {
+    position: absolute; 
+    transform: translateX(-50%); 
+    transition: width 0.2s, height 0.2s;
+    z-index: -2;
+    transition: top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  }
+  
+    .burst {
+      opacity: 0;
+      transition: opacity 1s ease-out;
+    }
+    
