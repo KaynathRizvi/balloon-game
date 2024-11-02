@@ -166,8 +166,8 @@ function Home() {
               style={{
                 position: 'absolute',
                 top: `${balloon.position.top + balloon.size / 50}%`,
-                left: `${balloon.position.left + balloon.size / 50}%`,
-                transform: 'translate(-50%)',
+                left: `${balloon.position.left + balloon.size / 90}%`,
+                transform: 'translate(-90%)',
                 opacity: 1,
                 transition: 'opacity 0.5s ease',
               }} />
