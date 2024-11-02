@@ -6,6 +6,7 @@ function Home() {
   const [isHandleMoving, setIsHandleMoving] = useState(false);
   const [isCompressorMoving, setIsCompressorMoving] = useState(false);
   const [balloons, setBalloons] = useState([]); // Array to hold balloon properties
+  const [clickCount, setClickCount] = useState(0);
 
   const balloonColors = [
     "/images/balloon_red.png", "/images/balloon_blue.png", "/images/balloon_green.png",
@@ -47,6 +48,16 @@ function Home() {
         };
       }
       return newBalloons;
+    });
+
+    setClickCount(prevCount => {
+      const newCount = prevCount + 1;
+      if (newCount === 3) {
+        // Add a new balloon after 3 clicks
+        addNewBalloon();
+        setClickCount(0);
+      }
+      return newCount;
     });
 
     setTimeout(() => {
@@ -125,7 +136,7 @@ function Home() {
         };
       }
     });
-  }, [balloons, addNewBalloon]);
+  }, [balloons]);
 
   return (
     <div className="container">
